@@ -1,6 +1,14 @@
-import * as React from "react"
+import * as React from "react";
 import { Badge } from "@/components/ui/badge"
-import Image from "next/image"
+import Image from "next/image";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 interface nftstatsProps {
   title: string;
@@ -14,10 +22,12 @@ const nftstats: React.FC<nftstatsProps> = ({
   isPrice = false,
 }) => {
   return (
-    <div >
-      <h3 className="text-[15px] font-default text-white/30">{title}</h3>
-      <div className="flex text-[16px] font-bold text-white ">
-        {isPrice ? (
+    <Card className="p-0 bg-transparent">
+      <CardContent>
+        <div className="flex justify-between">
+          <div className="grid grid-cols-1 flex-col">
+            <CardTitle className="text-white/30 text-[12px]">{title}</CardTitle>
+            <p className="text-white text-[16px]">{isPrice ? (
           <>
             {typeof number === "number" ? number.toFixed(2) : number}
         <Badge variant="default">
@@ -26,9 +36,11 @@ const nftstats: React.FC<nftstatsProps> = ({
           </>
         ) : (
             number
-        )}
-      </div>
-    </div>
+        )}</p>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 
