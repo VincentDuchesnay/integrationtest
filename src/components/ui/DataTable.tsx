@@ -24,6 +24,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Settings2 } from "lucide-react";
 import * as React from "react";
+import clsx from "clsx";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -63,19 +64,25 @@ export function DataTable<TData, TValue>({
             variant="outline"
             className="flex gap-2 items-center"
           >
-            {sorting.length > 0 ? sorting[0].id : "Sort by"} <Settings2 className="text-white w-4 h-4" />
+            {sorting.length > 0 ? sorting[0].id : "Sort by"} <Settings2 className="text-white w-full h-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="lg:w-[196.5px] md:w-[100px] sm:w-full text-black rounded-[4px]">
-          {table.getAllColumns().map((column) => (
-            <DropdownMenuItem
-              className="hover:border-b-[3px] hover:border-t-[3px] border-[#2525254D]/50 rounded-none"
-              key={column.id}
-              onClick={() => sortBy(column.id || "")}
-            >
-              {column.id}
-            </DropdownMenuItem>
-          ))}
+        <DropdownMenuContent className="w-[196.5px] text-black rounded-[4px]">
+        {table.getAllColumns()
+  .filter((col) =>
+    typeof window !== "undefined" && window.innerWidth < 640
+      ? ["event", "time"].includes(col.id!)
+      : true
+  )
+  .map((column) => (
+    <DropdownMenuItem
+      className="hover:border-b-[3px] hover:border-t-[3px] border-[#2525254D]/50 rounded-none"
+      key={column.id}
+      onClick={() => sortBy(column.id || "")}
+    >
+      {column.id}
+    </DropdownMenuItem>
+))}
         </DropdownMenuContent>
       </DropdownMenu>
 
@@ -85,7 +92,9 @@ export function DataTable<TData, TValue>({
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id} className="px-[12px] py-[8px] border-[1px] border-[#2525254D]/30">
                 {headerGroup.headers.map((header) => (
-                  <TableHead key={header.id} className="text-[15px] w-[300px] h-[24px]">
+                  <TableHead key={header.id} className={clsx("text-[15px] lg:w-[300px] h-[24px]", {
+                    "hidden sm:table-cell": header.column.id !== "event" && header.column.id !== "time"
+                  })}>
                     {flexRender(
                       header.column.columnDef.header,
                       header.getContext()
@@ -99,7 +108,9 @@ export function DataTable<TData, TValue>({
             {table.getRowModel().rows.map((row) => (
               <TableRow key={row.id}>
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="px-[12px] py-[10px] border-b-[1px] border-[#2525254D]/30  ">
+                  <TableCell key={cell.id} className={clsx("px-[12px] py-[10px] border-b-[1px] border-[#2525254D]/30", {
+                    "hidden sm:table-cell": cell.column.id !== "event" && cell.column.id !== "time"
+                  })}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}

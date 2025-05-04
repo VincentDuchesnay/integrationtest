@@ -205,7 +205,7 @@ export function useUserColumns(): ColumnDef<User>[] {
     },
     {
       accessorKey: "value",
-      header: () => <div className="text-white font-[18px] font-jura">Value</div>,
+      header: () => <div className="text-white font-[18px] font-jura hidden sm:block">Value</div>,
       cell: ({ row }) => {
         const price = row.getValue("value") as number;
         return (
@@ -217,7 +217,7 @@ export function useUserColumns(): ColumnDef<User>[] {
     },
     {
       accessorKey: "from",
-      header: () => <div className="text-white font-[18px] font-jura">From</div>,
+      header: () => <div className="text-white font-[18px] font-jura hidden sm:block">From</div>,
       cell: ({ row }) => {
         const address = row.getValue("from") as string;
         return <span className="text-white font-[18px] font-jura">{address.slice(0, 14).toUpperCase()}</span>;
@@ -225,7 +225,7 @@ export function useUserColumns(): ColumnDef<User>[] {
     },
     {
       accessorKey: "to",
-      header: () => <div className="text-white font-[18px] font-jura">To</div>,
+      header: () => <div className="text-white font-[18px] font-jura hidden sm:block">To</div>,
       cell: ({ row }) => {
         const address = row.getValue("to") as string;
         return <span className="text-white font-[18px] font-jura">{address.slice(0, 14).toUpperCase()}</span>;
