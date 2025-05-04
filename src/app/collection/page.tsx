@@ -1,37 +1,32 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Raritycardssection from "@/components/ui/raritycardssection";
-import Nftmetadata from "@/components/ui/nftmetadata";
-import { useMetadata } from "@/app/hooks/useMetadatas";
-import NFTStatsSection from "@/components/ui/nftstatssection";
-import { DataTable } from "@/components/ui/datatable";
+import NftDetailsSection from "@/components/ui/NftDetailsSection";
+import { DataTable } from "@/components/ui/DataTable";
 import { useUserColumns, datasTable } from "@/app/hooks/useDatasActivity";
+import NftImageSection from "@/components/ui/NftImageSection";
+import { useMetadata } from "@/app/hooks/useMetadatas";
 
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
   DialogCloseButton,
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Image from "next/image";
-import { SendIcon, ShareIcon, RefreshCwIcon } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import NFTransactionSection from "@/components/ui/nfttransactionsection";
 
 export default function CollectionPage() {
-  const columns = useUserColumns();
+  const activityColumns = useUserColumns();
+  const { image } = useMetadata();
   return (
     <div className="flex min-h-screen items-start md:items-center justify-center bg-[url(../images/bgimage.png)]">
       <Dialog>
-        <DialogTrigger asChild>
+        <DialogTrigger asChild >
           <Button
             variant="default"
-            className="font-[family-name:var(--font-geist-sans)]"
+            className="bg-white text-black border-1 border-black w-[500px] h-[200px] text-[24px] font-bold"
           >
             Show NFT
           </Button>
@@ -49,40 +44,14 @@ export default function CollectionPage() {
               <DialogCloseButton />
             </div>
             <TabsContent value="Overview">
-              <div className="flex items-center justify-between">
-                <div className="grid w-full items-center">
-                  <Image
-                    src="/images/01.png"
-                    alt="core"
-                    width={400}
-                    height={400}
-                  />
-                  <div className="flex gap-[4px] justify-end">
-                    <Badge variant="outline">
-                      <SendIcon className="text-white" />
-                    </Badge>
-                    <Badge variant="outline">
-                      <ShareIcon className="text-white" />
-                    </Badge>
-                    <Badge variant="secondary">
-                      <RefreshCwIcon className="text-white" />
-                    </Badge>
-                  </div>
-                </div>
-                <div className="grid items-center gap-[24px] w-fit">
-                  <DialogHeader>
-                    <DialogTitle>NFT Collection</DialogTitle>
-                  </DialogHeader>
-                  <NFTStatsSection />
-                  <NFTransactionSection />
-                  <Nftmetadata description={useMetadata().description} />
-                  <Raritycardssection />
-                </div>
+              <div className="grid grid-cols-[repeat(2,_auto)] items-start justify-between w-[1002px]">
+                <NftImageSection src={image} />
+                <NftDetailsSection />
               </div>
             </TabsContent>
             <TabsContent value="activity" >
               <div className="container gap-[16px]">
-                <DataTable columns={columns} data={datasTable} />
+                <DataTable columns={activityColumns} data={datasTable} />
               </div>
             </TabsContent>
           </Tabs>

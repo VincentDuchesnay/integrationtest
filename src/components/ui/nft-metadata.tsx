@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
 import {
   DialogDescription,
   DialogHeader,
@@ -21,7 +19,7 @@ interface MetadataSectionProps {
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
-        <DialogDescription className="break-words text-sm font-jura">
+        <DialogDescription className="break-words text-sm max-w-[562px] line-height-[24px] letter-spacing-[0px] font-[var(--font-jura)]">
           {description}
         </DialogDescription>
       </div>

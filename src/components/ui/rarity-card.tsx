@@ -17,14 +17,14 @@ const raritycard: React.FC<raritycardProps> = ({
     pourcent,
   }) => {
     return (
-      <Card className="w-[181px]">
+      <Card className="w-[181.03px]">
         <CardContent>
-          <div className="flex justify-between gap-[24px]">
-            <div className="grid grid-cols-1 flex-col">
+          <div className="grid grid-cols-[repeat(2,_auto)] justify-between">
+            <div className="grid grid-cols-1">
               <p className="text-white/30 text-[12px]">Rarity</p>
               <p className="text-white text-[15px]">{rarity}</p>
             </div>
-            <div className="grid grid-cols-1 flex-col">
+            <div className="grid grid-cols-1">
               <p className="text-white/30 text-[12px]">{number}</p>
               <p className="text-white/30 text-[12px]">{pourcent}%</p>
           </div>

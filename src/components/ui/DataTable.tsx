@@ -20,9 +20,9 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
   DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/DropdownMenu";
 import { Button } from "@/components/ui/button";
-import { SettingsIcon } from "lucide-react";
+import { Settings2 } from "lucide-react";
 import * as React from "react";
 
 interface DataTableProps<TData, TValue> {
@@ -63,12 +63,13 @@ export function DataTable<TData, TValue>({
             variant="outline"
             className="bg-transparent flex gap-2 items-center"
           >
-            Sort by <SettingsIcon className="text-white w-4 h-4" />
+            {sorting.length > 0 ? sorting[0].id : "Sort by"} <Settings2 className="text-white w-4 h-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent>
+        <DropdownMenuContent className="w-[196.5px] text-black rounded-[4px]">
           {table.getAllColumns().map((column) => (
             <DropdownMenuItem
+              className="hover:border-b-[3px] hover:border-t-[3px] border-[#2525254D]/50 rounded-none"
               key={column.id}
               onClick={() => sortBy(column.id || "")}
             >
@@ -79,12 +80,12 @@ export function DataTable<TData, TValue>({
       </DropdownMenu>
 
       <div className="text-white">
-        <Table>
+        <Table className="max-w-[1316px]">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow key={headerGroup.id} className="px-[12px] py-[8px] border-[1px] border-[#2525254D]/30">
                 {headerGroup.headers.map((header) => (
-                  <TableHead key={header.id} className="px-[12px] py-[8px] border-[1px] border-[#2525254D]/30">
+                  <TableHead key={header.id} className="text-[15px] w-[300px] h-[24px]">
                     {flexRender(
                       header.column.columnDef.header,
                       header.getContext()
@@ -98,7 +99,7 @@ export function DataTable<TData, TValue>({
             {table.getRowModel().rows.map((row) => (
               <TableRow key={row.id}>
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="px-[12px] py-[10px] border-b-[1px] border-[#2525254D]/30">
+                  <TableCell key={cell.id} className="px-[12px] py-[10px] border-b-[1px] border-[#2525254D]/30  ">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}

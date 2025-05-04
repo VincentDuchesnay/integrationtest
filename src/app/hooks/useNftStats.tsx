@@ -1,5 +1,5 @@
 import { useState } from "react";
-type Stats = {
+export type Stats = {
     title: string;
     number: number | string;
     isPrice: boolean;
@@ -14,5 +14,5 @@ export function useNftStats() {
         { title: "Last Sale", number: 3568798.75, isPrice: true },
       ]);
 
-  return { stats };
+  return { stats , setStats };
 }
