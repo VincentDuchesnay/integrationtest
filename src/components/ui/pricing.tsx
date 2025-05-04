@@ -26,7 +26,10 @@ const pricing: React.FC<PriceWithIconProps> = ({
       : amount;
 
   return (
-    <span className={`flex items-center gap-[4px] text-white text-[${size}px]`}>
+    <span
+      className="flex items-center gap-[4px] text-white font-jura"
+      style={{ fontSize: `${size}px` }}
+    >
       {formatted}
       <Badge variant="default">
         <Image src={iconSrc} alt={iconAlt} width={size} height={size} />

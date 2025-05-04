@@ -26,12 +26,12 @@ export default function CollectionPage() {
         <DialogTrigger asChild >
           <Button
             variant="default"
-            className="bg-white text-black border-1 border-black w-[500px] h-[200px] text-[24px] font-bold"
+            className="bg-white text-black border-1 border-black text-[24px] font-bold"
           >
             Show NFT
           </Button>
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent className="overflow-y-auto max-h-screen">
           <DialogHeader>
             <DialogTitle className="hidden">NFT Collection</DialogTitle>
           </DialogHeader>
@@ -44,7 +44,7 @@ export default function CollectionPage() {
               <DialogCloseButton />
             </div>
             <TabsContent value="Overview">
-              <div className="grid grid-cols-[repeat(2,_auto)] items-start justify-between w-[1002px]">
+              <div className="grid lg:grid-cols-[repeat(2,_auto)] lg:items-start lg:justify-between lg:w-[1002px] md:grid-cols-auto md:w-full md:items-center md:justify-center">
                 <NftImageSection src={image} />
                 <NftDetailsSection />
               </div>

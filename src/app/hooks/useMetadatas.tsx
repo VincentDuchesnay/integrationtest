@@ -9,5 +9,14 @@ export function useMetadata() {
     "/images/01.png"
   );
 
-  return { description, setDescription, image, setImage };
+  const [nftname, setName] = useState<string>(
+    "Coretoshi #2675"
+  );
+
+  const [collectionName, setCollectionName] = useState<string>(
+    "Coretoshi"
+  );
+
+
+  return { description, setDescription, image, setImage, nftname, setName, collectionName, setCollectionName };
 }

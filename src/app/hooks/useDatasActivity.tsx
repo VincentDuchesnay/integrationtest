@@ -186,7 +186,7 @@ export function useUserColumns(): ColumnDef<User>[] {
   return [
     {
       accessorKey: "event",
-      header: () => <div className="text-white font-[18px]">Event</div>,
+      header: () => <div className="text-white font-[18px] font-jura">Event</div>,
       cell: ({ row }) => {
         const event = row.getValue("event") as string;
 
@@ -205,7 +205,7 @@ export function useUserColumns(): ColumnDef<User>[] {
     },
     {
       accessorKey: "value",
-      header: () => <div className="text-white font-[18px]">Value</div>,
+      header: () => <div className="text-white font-[18px] font-jura">Value</div>,
       cell: ({ row }) => {
         const price = row.getValue("value") as number;
         return (
@@ -217,29 +217,29 @@ export function useUserColumns(): ColumnDef<User>[] {
     },
     {
       accessorKey: "from",
-      header: () => <div className="text-white font-[18px]">From</div>,
+      header: () => <div className="text-white font-[18px] font-jura">From</div>,
       cell: ({ row }) => {
         const address = row.getValue("from") as string;
-        return <span className="text-white font-[18px]">{address.slice(0, 14).toUpperCase()}</span>;
+        return <span className="text-white font-[18px] font-jura">{address.slice(0, 14).toUpperCase()}</span>;
       },
     },
     {
       accessorKey: "to",
-      header: () => <div className="text-white font-[18px]">To</div>,
+      header: () => <div className="text-white font-[18px] font-jura">To</div>,
       cell: ({ row }) => {
         const address = row.getValue("to") as string;
-        return <span className="text-white font-[18px]">{address.slice(0, 14).toUpperCase()}</span>;
+        return <span className="text-white font-[18px] font-jura">{address.slice(0, 14).toUpperCase()}</span>;
       },
     },
     {
       accessorKey: "time",
-      header: () => <div className="text-right w-full text-white font-[18px]">Time</div>,
+      header: () => <div className="text-right w-full text-white font-[18px] font-jura">Time</div>,
       cell: ({ row }) => {
         const minutes = row.getValue("time") as number;
         return (
           <div className="w-full flex justify-end items-center gap-[8px]">
-            <span className="text-white font-[18px]">{minutes} min ago</span>
-            <Button variant="iconOutline" size="icon" padding="icon">
+            <span className="text-white font-[18px] font-jura">{minutes} min ago</span>
+            <Button variant="iconOutline" size="icon">
               <ExternalLink className="w-[16px] h-[16px] text-white" />
             </Button>
           </div>

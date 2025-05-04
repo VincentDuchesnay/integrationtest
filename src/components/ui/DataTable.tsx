@@ -56,17 +56,17 @@ export function DataTable<TData, TValue>({
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-[16px]">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
             variant="outline"
-            className="bg-transparent flex gap-2 items-center"
+            className="flex gap-2 items-center"
           >
             {sorting.length > 0 ? sorting[0].id : "Sort by"} <Settings2 className="text-white w-4 h-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-[196.5px] text-black rounded-[4px]">
+        <DropdownMenuContent className="lg:w-[196.5px] md:w-[100px] sm:w-full text-black rounded-[4px]">
           {table.getAllColumns().map((column) => (
             <DropdownMenuItem
               className="hover:border-b-[3px] hover:border-t-[3px] border-[#2525254D]/50 rounded-none"

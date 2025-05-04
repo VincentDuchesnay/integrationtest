@@ -17,9 +17,9 @@ interface MetadataSectionProps {
     return (
       <div className="flex flex-col gap-[4px]">
         <DialogHeader>
-          <DialogTitle>{title}</DialogTitle>
+          <DialogTitle className="text-[18px] text-white font-jura">{title}</DialogTitle>
         </DialogHeader>
-        <DialogDescription className="break-words text-sm max-w-[562px] line-height-[24px] letter-spacing-[0px] font-[var(--font-jura)]">
+        <DialogDescription className="break-words text-sm max-w-[562px] font-jura text-[16px]">
           {description}
         </DialogDescription>
       </div>
