@@ -10,7 +10,7 @@ type Stats = {
 };
 
 const NFTransactionSection: React.FC = () => {
-  const [stats, setStats] = useState<Stats[]>([
+  const [stats] = useState<Stats[]>([
     { title: "Price", content: 435.87, isPrice: true },
   ]);
 

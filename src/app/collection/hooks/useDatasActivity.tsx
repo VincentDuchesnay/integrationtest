@@ -200,7 +200,7 @@ export function useUserColumns(): ColumnDef<User>[] {
         const colorClass = colorMap[event] || "text-white";
         
 
-        return <span className={`${colorClass} text-[18px]`}>{event}</span>;
+        return <span className={`${colorClass} text-[18px] font-jura`}>{event}</span>;
       },
     },
     {
@@ -209,7 +209,7 @@ export function useUserColumns(): ColumnDef<User>[] {
       cell: ({ row }) => {
         const price = row.getValue("value") as number;
         return (
-          <div className="w-full flex items-center gap-[8px]">
+          <div className="w-full flex items-center gap-[8px] font-jura text-[18px]">
             <Pricing amount={price} size={18}/>
           </div>
         );

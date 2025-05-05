@@ -68,10 +68,7 @@ function DialogContent({
   );
 }
 
-function DialogCloseButton({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+function DialogCloseButton() {
   return (
     <DialogPrimitive.Close className="focus:ring-ring data-[state=open]:text-muted-foreground top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 max-w-[24px] max-h-[24px]">
       <XIcon className="text-white" />
