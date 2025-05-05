@@ -62,7 +62,7 @@ export function DataTable<TData, TValue>({
         <DropdownMenuTrigger asChild>
           <Button
             variant="outline"
-            className="flex gap-2 items-center text-[18px] font-jura bg-transparent"
+            className="flex gap-2 items-center text-[18px] font-jura bg-transparent max-w-[151px] px-[16px] py-[6px] border-[1px] border-[#252525]"
           >
             {sorting.length > 0 ? sorting[0].id : "Event Type"} <Settings2 className="text-white w-full h-4" />
           </Button>
@@ -90,7 +90,7 @@ export function DataTable<TData, TValue>({
         <Table className="max-w-[1002px]">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className="px-[12px] py-[8px] border-[1px] border-[#2525254D]/30">
+              <TableRow key={headerGroup.id} className="px-[12px] py-[8px] border-[2px] border-[#2525254D]/30">
                 {headerGroup.headers.map((header) => (
                   <TableHead key={header.id} className={clsx("text-[15px] lg:w-[300px] h-[24px]", {
                     "hidden sm:table-cell": header.column.id !== "event" && header.column.id !== "time"
