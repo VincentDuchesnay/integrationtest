@@ -67,7 +67,7 @@ export function DataTable<TData, TValue>({
             {sorting.length > 0 ? sorting[0].id : "Event Type"} <Settings2 className="text-white w-full h-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-[196.5px] text-black rounded-[4px]">
+        <DropdownMenuContent className="max-w-[151px] text-black rounded-[4px]">
         {table.getAllColumns()
   .filter((col) =>
     typeof window !== "undefined" && window.innerWidth < 640
