@@ -62,7 +62,7 @@ export function DataTable<TData, TValue>({
         <DropdownMenuTrigger asChild>
           <Button
             variant="outline"
-            className="flex gap-2 items-center text-[18px] font-jura"
+            className="flex gap-2 items-center text-[18px] font-jura bg-transparent"
           >
             {sorting.length > 0 ? sorting[0].id : "Event Type"} <Settings2 className="text-white w-full h-4" />
           </Button>
