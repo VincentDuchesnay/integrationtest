@@ -1,7 +1,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Pricing from "@/components/ui/pricing";
+import Pricing from "@/app/collection/components/pricing";
 export const datasTable = [
   {
     id: "1",

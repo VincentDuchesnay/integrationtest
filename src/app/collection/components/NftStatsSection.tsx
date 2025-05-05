@@ -1,6 +1,6 @@
 import * as React from "react";
-import NFTStats from "@/components/ui/NFTStats";
-import { useNftStats } from "@/app/hooks/useNftStats";
+import NFTStats from "@/app/collection/components/NFTStats";
+import { useNftStats } from "@/app/collection/hooks/useNftStats";
 
 const NftStatsSection: React.FC = () => {
   const { stats } = useNftStats();

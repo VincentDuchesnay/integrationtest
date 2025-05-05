@@ -1,11 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import NftDetailsSection from "@/components/ui/NftDetailsSection";
+import NftDetailsSection from "@/app/collection/components/NftDetailsSection";
 import { DataTable } from "@/components/ui/DataTable";
-import { useUserColumns, datasTable } from "@/app/hooks/useDatasActivity";
-import NftImageSection from "@/components/ui/NftImageSection";
-import { useMetadata } from "@/app/hooks/useMetadatas";
+import { useUserColumns, datasTable } from "@/app/collection/hooks/useDatasActivity";
+import NftImageSection from "@/app/collection/components/NftImageSection";
+import { useMetadata } from "@/app/collection/hooks/useMetadatas";
 
 import {
   Dialog,
@@ -21,7 +21,7 @@ export default function CollectionPage() {
   const activityColumns = useUserColumns();
   const { image } = useMetadata();
   return (
-    <div className="flex min-h-screen items-start md:items-center justify-center bg-[url(../images/bgimage.png)]">
+    <div className="flex min-h-screen items-start md:items-center justify-center bg-[url(/images/bgimage.png)]">
       <Dialog>
         <DialogTrigger asChild >
           <Button

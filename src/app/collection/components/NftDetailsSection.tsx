@@ -1,9 +1,9 @@
 import * as React from "react";
-import Raritycardssection from "@/components/ui/RarityCardsSection";
-import Nftmetadata from "@/components/ui/MetadataSection";
-import { useMetadata } from "@/app/hooks/useMetadatas";
-import NFTStatsSection from "@/components/ui/NftStatsSection";
-import NFTransactionSection from "@/components/ui/NFTransactionSection";
+import Raritycardssection from "@/app/collection/components/RarityCardsSection";
+import Nftmetadata from "@/app/collection/components/MetadataSection";
+import { useMetadata } from "@/app/collection/hooks/useMetadatas";
+import NFTStatsSection from "@/app/collection/components/NftStatsSection";
+import NFTransactionSection from "@/app/collection/components/NFTransactionSection";
 import {
   DialogHeader,
   DialogTitle,

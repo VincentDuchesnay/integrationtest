@@ -1,6 +1,6 @@
 import * as React from "react";
 import RarityCard from "./RarityCard";
-import { useNftrarityDatas } from "@/app/hooks/useNftrarityDatas";
+import { useNftrarityDatas } from "@/app/collection/hooks/useNftrarityDatas";
 
 const RarityCardsSection: React.FC = () => {
   const { rarityDatas } = useNftrarityDatas();

@@ -1,5 +1,5 @@
 import * as React from "react";
-import Pricing from "@/components/ui/pricing";
+import Pricing from "@/app/collection/components/pricing";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 
 interface nftstatsProps {
