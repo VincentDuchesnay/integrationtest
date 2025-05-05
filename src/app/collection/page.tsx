@@ -44,13 +44,13 @@ export default function CollectionPage() {
               <DialogCloseButton />
             </div>
             <TabsContent value="Overview">
-              <div className="grid lg:grid-cols-[repeat(2,_auto)] lg:items-start lg:justify-between lg:w-[1002px] md:grid-cols-auto md:w-full md:items-center md:justify-center">
+              <div className="grid lg:grid-cols-[repeat(2,_auto)] lg:items-start lg:justify-between lg:w-[1002px] lg:h-[650px] md:grid-cols-auto md:w-full md:items-center md:justify-center">
                 <NftImageSection src={image} />
                 <NftDetailsSection />
               </div>
             </TabsContent>
             <TabsContent value="activity" >
-              <div className="container gap-[16px]">
+              <div className="gap-[16px] lg:max-h-[650px] lg:w-[1002px]">
                 <DataTable columns={activityColumns} data={datasTable} />
               </div>
             </TabsContent>

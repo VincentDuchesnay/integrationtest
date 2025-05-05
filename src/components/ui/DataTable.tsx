@@ -47,7 +47,7 @@ export function DataTable<TData, TValue>({
     getPaginationRowModel: getPaginationRowModel(),
     initialState: {
       pagination: {
-        pageSize: 12,
+        pageSize: 9,
       },
     },
   });
@@ -87,7 +87,7 @@ export function DataTable<TData, TValue>({
       </DropdownMenu>
 
       <div className="text-white">
-        <Table className="max-w-[1316px]">
+        <Table className="max-w-[1002px]">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id} className="px-[12px] py-[8px] border-[1px] border-[#2525254D]/30">
